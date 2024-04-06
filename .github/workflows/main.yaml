@@ -1,0 +1,25 @@
+name: CI
+
+on: [push]
+
+jobs:
+
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script_stop: true
+          debug: true
+          command_timeout: 200m
+          script: 
+            cd ./taro-deploy &&
+            cd ./taro-discord-bot && git pull && cd .. &&
+            docker-compose up -d &&
+            echo "Deploy completed!"

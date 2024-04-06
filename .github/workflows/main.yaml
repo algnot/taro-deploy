@@ -19,7 +19,10 @@ jobs:
           debug: true
           command_timeout: 200m
           script: 
-            cd ./taro-deploy &&
-            cd ./taro-discord-bot && git pull && cd .. &&
+            cd ./taro-deploy && 
+            git pull &&
+            cd ./taro-discord-bot && 
+            git pull && 
+            cd .. &&
             docker-compose up -d &&
             echo "Deploy completed!"

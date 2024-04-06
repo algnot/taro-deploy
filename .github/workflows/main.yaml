@@ -24,6 +24,5 @@ jobs:
             cd ./taro-discord-bot && 
             git pull && 
             cd .. &&
-            sudo docker compose -f "docker-compose.yaml" up -d --build &&
-            sudo docker rmi -f $(sudo docker images -aq) &&
+            sudo docker compose -f "docker-compose.yaml" up -d &&
             echo "Deploy completed!"

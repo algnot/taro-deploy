@@ -25,4 +25,5 @@ jobs:
             git pull && 
             cd .. &&
             sudo docker compose -f "docker-compose.yaml" up -d --build &&
+            sudo docker rmi -f $(sudo docker images -aq) &&
             echo "Deploy completed!"

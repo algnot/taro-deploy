@@ -7,5 +7,16 @@ services:
       dockerfile: Dockerfile
     env_file:
       - .taro-discord-bot-env
+    environment:
+      - SERVICE_NAME=taro-discord-bot
+
+  taro-discord-controller:
+    build: 
+      context: ./taro-discord-bot/
+      dockerfile: Dockerfile
+    env_file:
+      - .taro-discord-bot-env
+    environment:
+      - SERVICE_NAME=taro-discord-controller
     ports:
       - 3000:3000

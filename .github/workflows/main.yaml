@@ -26,5 +26,5 @@ jobs:
             git reset --hard $(cat ../version/taro-discord-bot.txt) && 
             cd .. &&
             sudo docker compose -f "docker-compose.yaml" up -d &&
-            docker-compose restart taro-discord-bot &&
+            sudo docker compose restart taro-discord-bot &&
             echo "Deploy completed!"

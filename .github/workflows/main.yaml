@@ -28,3 +28,4 @@ jobs:
             sudo docker compose -f "docker-compose.yaml" up -d &&
             sudo docker compose restart taro-discord-bot &&
             echo "Deploy completed!"
+            

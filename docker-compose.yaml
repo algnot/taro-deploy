@@ -8,4 +8,4 @@ services:
     env_file:
       - .taro-discord-bot-env
     volumes:
-      - ./src:/bot
+      - ./:/bot

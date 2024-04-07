@@ -7,5 +7,5 @@ services:
       dockerfile: Dockerfile
     env_file:
       - .taro-discord-bot-env
-    volumes:
-      - ./:/bot
+    ports:
+      - 3000:3000

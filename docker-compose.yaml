@@ -9,7 +9,7 @@ services:
       - .taro-discord-bot-env
     environment:
       - SERVICE_NAME=taro-discord-bot
-      - TARO_RUNNER_ENDPOINT=taro-discord-runner:3000
+      - TARO_RUNNER_ENDPOINT=http://taro-discord-runner:3000
     depends_on:
       taro-discord-runner:
         condition: service_healthy

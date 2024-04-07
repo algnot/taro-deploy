@@ -42,7 +42,7 @@ services:
     environment:
       - SERVICE_NAME=taro-discord-runner
     ports:
-      - 3000:3030
+      - 3030:3000
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:3000/ || exit 1
       interval: 20s

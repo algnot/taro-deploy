@@ -30,4 +30,4 @@ services:
     environment:
       - SERVICE_NAME=taro-discord-runner
     ports:
-      - 3030:3000
+      - 3000:3030

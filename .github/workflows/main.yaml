@@ -22,7 +22,7 @@ jobs:
             cd ./taro-deploy && 
             git pull &&
             cd ./taro-discord-bot && 
-            git pull && 
+            git reset --hard $(cat ../version/taro-discord-bot.txt) && 
             cd .. &&
             sudo docker compose -f "docker-compose.yaml" up -d &&
             echo "Deploy completed!"

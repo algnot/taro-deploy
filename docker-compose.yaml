@@ -20,3 +20,14 @@ services:
       - SERVICE_NAME=taro-discord-controller
     ports:
       - 3000:3000
+
+  taro-discord-runner:
+    build: 
+      context: ./taro-discord-bot/
+      dockerfile: Dockerfile
+    env_file:
+      - .taro-discord-bot-env
+    environment:
+      - SERVICE_NAME=taro-discord-runner
+    ports:
+      - 3030:3000

@@ -10,6 +10,7 @@ services:
     environment:
       - SERVICE_NAME=taro-discord-bot
       - TARO_RUNNER_ENDPOINT=http://taro-discord-runner:3000
+      - TZ=Asia/Bangkok 
     restart: always
 
   taro-discord-controller:
@@ -20,6 +21,7 @@ services:
       - .taro-discord-bot-env
     environment:
       - SERVICE_NAME=taro-discord-controller
+      - TZ=Asia/Bangkok 
     ports:
       - 3000:3000
     healthcheck:
@@ -38,6 +40,7 @@ services:
       - .taro-discord-bot-env
     environment:
       - SERVICE_NAME=taro-discord-runner
+      - TZ=Asia/Bangkok 
     ports:
       - 3030:3000
     healthcheck:
@@ -50,6 +53,8 @@ services:
 
   portainer:
     image: portainer/portainer-ce:latest
+    environment:
+      - TZ=Asia/Bangkok 
     ports:
       - "9000:9000"
     volumes:
@@ -62,6 +67,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: taro-db
+      TZ: Asia/Bangkok 
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
@@ -81,6 +87,7 @@ services:
       LOG_LEVEL: "debug"
       INIT_FRONTEND_API_TOKENS: "default:development.unleash-insecure-frontend-api-token"
       INIT_CLIENT_API_TOKENS: "default:development.unleash-insecure-api-token"
+      TZ: Asia/Bangkok 
     depends_on:
       postgres:
         condition: service_healthy

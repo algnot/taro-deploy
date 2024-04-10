@@ -40,6 +40,7 @@ services:
       - .taro-discord-bot-env
     environment:
       - SERVICE_NAME=taro-discord-runner
+      - TARO_CONTROLLER_ENDPOINT=http://taro-discord-controller:3000
       - TZ=Asia/Bangkok 
     ports:
       - 3030:3000
